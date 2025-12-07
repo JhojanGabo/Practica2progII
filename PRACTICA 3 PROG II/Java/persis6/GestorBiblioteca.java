@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 		private String ruta = "biblioteca.json";
 	    private Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-	    // Contenedor que agrupa todas las listas para guardarlas y cargarlas juntas
 	    private static class DataContainer {
 	        List<Libro> libros;
 	        List<Cliente> clientes;
@@ -20,7 +19,6 @@ import java.util.stream.Collectors;
 	    private List<Cliente> clientes = new ArrayList<>();
 	    private List<Prestamo> prestamos = new ArrayList<>();
 
-	    // Guarda el estado actual de las 3 listas en el JSON
 	    private void guardar() {
 	        DataContainer data = new DataContainer();
 	        data.libros = this.libros;
@@ -34,7 +32,6 @@ import java.util.stream.Collectors;
 	        }
 	    }
 
-	    // Lee el JSON y carga las 3 listas, manejando el caso de archivo inexistente o vacío
 	    private void leer() {
 	        File f = new File(ruta);
 	        if (!f.exists() || f.length() == 0) {
@@ -48,7 +45,6 @@ import java.util.stream.Collectors;
 	            DataContainer data = gson.fromJson(r, DataContainer.class);
 	            
 	            if (data != null) {
-	                // Blindaje contra posibles valores null si el JSON está incompleto
 	                this.libros = data.libros != null ? data.libros : new ArrayList<>();
 	                this.clientes = data.clientes != null ? data.clientes : new ArrayList<>();
 	                this.prestamos = data.prestamos != null ? data.prestamos : new ArrayList<>();
@@ -62,7 +58,6 @@ import java.util.stream.Collectors;
 	        }
 	    }
 	    
-	    // --- Métodos de CRUD para agregar datos ---
 
 	    public void agregarLibro(Libro l) {
 	        leer();
@@ -82,9 +77,6 @@ import java.util.stream.Collectors;
 	        guardar();
 	    }
 
-	    // --- Métodos de Requerimiento ---
-
-	    // 1. Libros por rango precio
 	    public void listarLibrosRango(double x, double y) {
 	        leer();
 	        System.out.println("\n--- Libros en rango de " + x + " a " + y + " Bs ---");
@@ -93,7 +85,6 @@ import java.util.stream.Collectors;
 	              .forEach(System.out::println);
 	    }
 
-	    // 2. Ingreso por libro
 	    public void ingresoTotalLibro(String cod) {
 	        leer();
 	        double precio = libros.stream()
@@ -111,7 +102,6 @@ import java.util.stream.Collectors;
 	        System.out.println("Ingreso total: " + (precio * totalPrestado) + " Bs");
 	    }
 
-	    // 3. Libros no vendidos (no prestados)
 	    public void librosNuncaPrestados() {
 	        leer();
 	        Set<String> prestados = prestamos.stream()
@@ -124,7 +114,6 @@ import java.util.stream.Collectors;
 	              .forEach(System.out::println);
 	    }
 
-	    // 4. Clientes que compraron X
 	    public void clientesDeLibro(String codLibro) {
 	        leer();
 	        List<Integer> cis = prestamos.stream()
@@ -139,7 +128,6 @@ import java.util.stream.Collectors;
 	                .forEach(System.out::println);
 	    }
 
-	    // 5. Libro más prestado
 	    public void libroMasPrestado() {
 	        leer();
 	        if (prestamos.isEmpty()) {

@@ -4,7 +4,6 @@ import java.util.List;
 public class Farmacia {
 	private int sucursal;
     private String direccion;
-    // Inicializamos aquí para evitar NullPointerException antes de guardar
     private List<Medicamento> medicamentos = new ArrayList<>();
 
     public Farmacia(int sucursal, String direccion) {
@@ -17,7 +16,6 @@ public class Farmacia {
         medicamentos.add(m); 
     }
 
-    // Método getter blindado: si Gson lo dejó null, devolvemos una lista nueva
     public List<Medicamento> getMedicamentos() { 
         if (medicamentos == null) {
             medicamentos = new ArrayList<>();

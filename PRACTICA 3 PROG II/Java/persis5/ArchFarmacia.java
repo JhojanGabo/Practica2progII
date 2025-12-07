@@ -9,7 +9,7 @@ import java.util.*;
 		    private List<Farmacia> lista = new ArrayList<>();
 		    private Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-		    // Guardar la lista actual en disco
+		   
 		    public void guardar() {
 		        try (Writer w = new FileWriter(ruta)) { 
 		            gson.toJson(lista, w); 
@@ -18,7 +18,7 @@ import java.util.*;
 		        }
 		    }
 		    
-		    // Leer del disco y cargar en memoria
+		 
 		    public void leer() {
 		        File f = new File(ruta);
 		        if (!f.exists()) {
@@ -33,14 +33,14 @@ import java.util.*;
 		        }
 		    }
 		    
-		    // a) Agregar Farmacia (CRUD: Crear)
+		    
 		    public void registrar(Farmacia f) {
 		        leer();
 		        lista.add(f);
 		        guardar();
 		    }
 
-		    // b) Mostrar sucursal de un medicamento (Tapsin)
+		    
 		    public void mostrarUbicacionMedicamento(String nombreMed) {
 		        leer();
 		        boolean encontrado = false;
@@ -56,7 +56,7 @@ import java.util.*;
 		        if (!encontrado) System.out.println("No se encontró el medicamento.");
 		    }
 
-		    // c) Buscar por tipo
+		   
 		    public void buscarPorTipo(String tipo) {
 		        leer();
 		        System.out.println("--- Medicamentos tipo: " + tipo + " ---");
@@ -69,7 +69,6 @@ import java.util.*;
 		        }
 		    }
 
-		    // d) Ordenar farmacias por dirección
 		    public void ordenarPorDireccion() {
 		        leer();
 		        lista.sort(Comparator.comparing(Farmacia::getDireccion));
@@ -77,25 +76,21 @@ import java.util.*;
 		        System.out.println("--- Farmacias ordenadas por dirección ---");
 		    }
 
-		    // e) Mover medicamentos
 		    public void moverMedicamento(String tipo, int sucOrigen, int sucDestino) {
 		        leer();
 		        Farmacia origen = null;
 		        Farmacia destino = null;
 
-		        // 1. Buscar las farmacias
 		        for (Farmacia f : lista) {
 		            if (f.getSucursal() == sucOrigen) origen = f;
 		            if (f.getSucursal() == sucDestino) destino = f;
 		        }
 
-		        // 2. Validar que existan
 		        if (origen == null || destino == null) {
 		            System.out.println("Error: Una de las sucursales no existe.");
 		            return;
 		        }
 
-		        // 3. Mover usando Iterator para evitar ConcurrentModificationException
 		        System.out.println("--- Moviendo medicamentos tipo '" + tipo + "' de Sucursal " + sucOrigen + " a " + sucDestino + " ---");
 		        Iterator<Medicamento> it = origen.getMedicamentos().iterator();
 		        int cont = 0;
@@ -103,14 +98,14 @@ import java.util.*;
 		        while (it.hasNext()) {
 		            Medicamento m = it.next();
 		            if (m.getTipo().equalsIgnoreCase(tipo)) {
-		                destino.addMedicamento(m); // Agregar al destino
-		                it.remove();               // Eliminar del origen de forma segura
+		                destino.addMedicamento(m); 
+		                it.remove();               
 		                cont++;
 		            }
 		        }
 		        
 		        if (cont > 0) {
-		            guardar(); // Guardar cambios solo si hubo movimientos
+		            guardar(); 
 		            System.out.println("Se movieron " + cont + " medicamentos con éxito.");
 		        } else {
 		            System.out.println("No se encontraron medicamentos de ese tipo en la sucursal origen.");
