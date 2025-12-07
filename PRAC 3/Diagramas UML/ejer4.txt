@@ -1,0 +1,24 @@
++-----------------------+
+|       Estudiante      |
++-----------------------+
+| - ru: int             |
+| - nombre: String      |
+| - paterno: String     |
+| - edad: int           |
++-----------------------+
+          ^
+          | (asociado)
+          |
++-----------------------+              +-----------------------------+
+|         Nota          |              |          ArchiNota          |
++-----------------------+              +-----------------------------+
+| - materia: String     | <----------- | - nombreArchi: String       |
+| - notaFinal: double   |  (contiene)  | - lista: List<Nota>         |
+| - est: Estudiante     |              | - gson: Gson                |
++-----------------------+              +-----------------------------+
+| + Nota(...)           |              | + ArchiNota(...)            |
+| + getNotaFinal()      |              | + agregarNota(Nota)         |
+| + getEstudiante()     |              | + promedioTotal()           |
++-----------------------+              | + mejorNota()               |
+                                       | + eliminarMateria(mat)      |
+                                       +-----------------------------+

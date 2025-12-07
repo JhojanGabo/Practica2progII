@@ -1,0 +1,16 @@
++-----------------------+              +-----------------------------+
+|        Charango       |              |       ArchivoCharango       |
++-----------------------+              +-----------------------------+
+| - material: String    | <----------- | - nombreArch: String        |
+| - nroCuerdas: int     |  (contiene)  | - lista: List<Charango>     |
+| - cuerdas: boolean[]  |              | - gson: Gson                |
++-----------------------+              +-----------------------------+
+| + Charango(...)       |              | + ArchivoCharango(...)      |
+| + getMaterial()       |              | + cargar()                  |
+| + toString()          |              | + guardar()                 |
++-----------------------+              | + agregar(Charango)         |
+                                       | + eliminarDefectuosos()     |
+                                       | + listarPorMaterial(str)    |
+                                       | + buscar10Cuerdas()         |
+                                       | + ordenarPorMaterial()      |
+                                       +-----------------------------+

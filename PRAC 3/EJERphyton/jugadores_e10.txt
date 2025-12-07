@@ -1,0 +1,17 @@
+[
+    {
+        "nombre": "DarkKnight",
+        "nivel": 10,
+        "puntaje": 5000
+    },
+    {
+        "nombre": "GamerPro",
+        "nivel": 20,
+        "puntaje": 12000
+    },
+    {
+        "nombre": "NoobSlayer",
+        "nivel": 5,
+        "puntaje": 1000
+    }
+]

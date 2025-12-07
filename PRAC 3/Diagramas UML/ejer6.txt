@@ -1,0 +1,25 @@
++-----------------------+      +-----------------------+      +-----------------------+
+|         Libro         |      |       Prestamo        |      |        Cliente        |
++-----------------------+      +-----------------------+      +-----------------------+
+| - codigo: String      | <--- | - codLibro: String    | ---> | - codCliente: String  |
+| - titulo: String      |      | - codCliente: String  |      | - nombre: String      |
+| - precio: double      |      | - cantidad: int       |      +-----------------------+
++-----------------------+      +-----------------------+
+           ^                               ^                              ^
+           |                               |                              |
+           | (lista)                       | (lista)                      | (lista)
+           +-------------------------------+------------------------------+
+                                           |
+                           +--------------------------------+
+                           |         GestorLibreria         |
+                           +--------------------------------+
+                           | - libros: List<Libro>          |
+                           | - prestamos: List<Prestamo>    |
+                           | - clientes: List<Cliente>      |
+                           +--------------------------------+
+                           | + cargar() / guardar()         |
+                           | + listarLibrosPrecio(x,y)      |
+                           | + ingresoTotalLibro(cod)       |
+                           | + librosNuncaVendidos()        |
+                           | + libroMasPrestado()           |
+                           +--------------------------------+

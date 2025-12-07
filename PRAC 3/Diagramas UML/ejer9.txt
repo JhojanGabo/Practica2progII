@@ -1,0 +1,24 @@
+                                       +-----------------------------+
+                                       |           ArchZoo           |
+                                       +-----------------------------+
+                                       | - nombre: String            |
+                                       | - lista: List<Zoologico>    |
+                                       +-----------------------------+
+                                       | + crear(Zoologico)          |
+                                       | + mayorVariedad()           |
+                                       | + eliminarVacios()          |
+                                       | + moverAnimales(org, dst)   |
+                                       +-----------------------------+
+                                                     |
+                                                     | (gestiona)
+                                                     v
++-----------------------+              +-----------------------------+
+|         Animal        |              |          Zoologico          |
++-----------------------+              +-----------------------------+
+| - especie: String     | <----------- | - id: int                   |
+| - nombre: String      |  (contiene)  | - nombre: String            |
+| - cantidad: int       |              | - animales: List<Animal>    |
++-----------------------+              +-----------------------------+
+| + Animal(...)         |              | + Zoologico(...)            |
++-----------------------+              | + addAnimal(a)              |
+                                       +-----------------------------+

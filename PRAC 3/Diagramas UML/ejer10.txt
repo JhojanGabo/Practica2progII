@@ -1,0 +1,12 @@
++-----------------------+              +-----------------------------+
+|        Jugador        |              |       ArchivoJugadores      |
++-----------------------+              +-----------------------------+
+| - nombre: String      | <----------- | - nombreArch: String        |
+| - nivel: int          |  (contiene)  | - lista: List<Jugador>      |
+| - puntaje: int        |              | - gson: Gson                |
++-----------------------+              +-----------------------------+
+| + Jugador(...)        |              | + ArchivoJugadores()        |
+| + getNombre()         |              | + guardarJugador(j)         |
+| + toString()          |              | + mostrarTodos()            |
++-----------------------+              | + buscarPorNombre(n)        |
+                                       +-----------------------------+

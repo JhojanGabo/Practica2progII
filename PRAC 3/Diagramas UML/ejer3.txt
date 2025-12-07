@@ -1,0 +1,14 @@
++-----------------------+              +-----------------------------+
+|        Producto       |              |       ArchivoProducto       |
++-----------------------+              +-----------------------------+
+| - codigo: int         | <----------- | - nomA: String              |
+| - nombre: String      |  (contiene)  | - lista: List<Producto>     |
+| - precio: float       |              | - gson: Gson                |
++-----------------------+              +-----------------------------+
+| + Producto(...)       |              | + ArchivoProducto(...)      |
+| + getCodigo()         |              | + crearArchivo()            |
+| + getPrecio()         |              | + guardaProducto(p)         |
++-----------------------+              | + buscaProducto(cod)        |
+                                       | + promedioPrecios()         |
+                                       | + productoMasCaro()         |
+                                       +-----------------------------+

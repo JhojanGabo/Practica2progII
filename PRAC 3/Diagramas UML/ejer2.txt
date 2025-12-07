@@ -1,0 +1,14 @@
++-----------------------+              +-----------------------------+
+|       Trabajador      |              |      ArchivoTrabajador      |
++-----------------------+              +-----------------------------+
+| - nombre: String      | <----------- | - nombreArch: String        |
+| - carnet: int         |  (contiene)  | - lista: List<Trabajador>   |
+| - salario: double     |              | - gson: Gson                |
++-----------------------+              +-----------------------------+
+| + Trabajador(...)     |              | + ArchivoTrabajador()       |
+| + getCarnet()         |              | + crearArchivo()            |
+| + setSalario(double)  |              | + guardarTrabajador(t)      |
++-----------------------+              | + aumentarSalario(ci,monto) |
+                                       | + buscarMayorSalario()      |
+                                       | + ordenarPorSalario()       |
+                                       +-----------------------------+

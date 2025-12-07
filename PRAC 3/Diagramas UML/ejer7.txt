@@ -1,0 +1,24 @@
++-----------------------+
+|        Persona        |
++-----------------------+
+| # nombre: String      |
+| # paterno: String     |
+| # ci: int             |
++-----------------------+
+           ^
+           | (hereda)
+           |
++-----------------------+              +-----------------------------+
+|          Niño         |              |           ArchNiño          |
++-----------------------+              +-----------------------------+
+| - edad: int           | <----------- | - nomA: String              |
+| - peso: double        |  (contiene)  | - lista: List<Niño>         |
+| - talla: double       |              | - gson: Gson                |
++-----------------------+              +-----------------------------+
+| + Niño(...)           |              | + ArchNiño(...)             |
+| + getPeso()           |              | + crear(Niño)               |
+| + getTalla()          |              | + verificarSalud()          |
++-----------------------+              | + promedioEdad()            |
+                                       | + buscarPorCarnet(x)        |
+                                       | + tallaMasAlta()            |
+                                       +-----------------------------+
