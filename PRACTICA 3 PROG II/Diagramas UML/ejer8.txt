@@ -1,0 +1,14 @@
++-----------------------+              +-----------------------------+
+|       Alimento        |              |          ArchRefri          |
++-----------------------+              +-----------------------------+
+| - nombre: String      | <----------- | - nombre: String            |
+| - fechaVenc: String   |  (contiene)  | - lista: List<Alimento>     |
+| - cantidad: int       |              | - gson: Gson                |
++-----------------------+              +-----------------------------+
+| + Alimento(...)       |              | + ArchRefri(...)            |
+| + toString()          |              | + agregar(Alimento)         |
++-----------------------+              | + mostrarVencidos(fecha)    |
+                                       | + eliminarSinCantidad()     |
+                                       | + buscarYaVencidos()        |
+                                       | + masCantidad()             |
+                                       +-----------------------------+

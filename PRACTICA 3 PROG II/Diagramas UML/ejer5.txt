@@ -1,0 +1,25 @@
+				       +-----------------------------+
+                                       |         ArchFarmacia        |
+                                       +-----------------------------+
+                                       | - nomA: String              |
+                                       | - lista: List<Farmacia>     |
+                                       +-----------------------------+
+                                       | + adicionarFarmacia(f)      |
+                                       | + mostrarTosSucursal(x)     |
+                                       | + buscarTapsin()            |
+                                       | + moverMedicamentos(...)    |
+                                       +-----------------------------+
+                                                     |
+                                                     | (gestiona)
+                                                     v
++-----------------------+              +-----------------------------+
+|      Medicamento      |              |           Farmacia          |
++-----------------------+              +-----------------------------+
+| - nombre: String      | <----------- | - nombreF: String           |
+| - tipo: String        |  (contiene)  | - sucursal: int             |
+| - precio: double      |              | - direccion: String         |
++-----------------------+              | - meds: List<Medicamento>   |
+| + Medicamento(...)    |              +-----------------------------+
++-----------------------+              | + addMedicamento(m)         |
+                                       | + getSucursal()             |
+                                       +-----------------------------+

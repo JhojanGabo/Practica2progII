@@ -1,0 +1,7 @@
+[
+    {
+        "_nombre": "Ana Perez",
+        "ci": "123",
+        "telefono": "777"
+    }
+]
